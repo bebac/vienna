@@ -1,4 +1,4 @@
-require 'opal-jquery'
+require 'opal-browser'
 
 module Vienna
   class HistoryRouter
@@ -8,7 +8,7 @@ module Vienna
       @routes = []
       @location = $global.location
 
-      Window.on(:popstate) { update }
+      $window.on(:popstate) { update }
 
       instance_eval(&block) if block
     end

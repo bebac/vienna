@@ -33,7 +33,7 @@ module Vienna
       @routes.find { |r| r.match path }
     end
 
-    # Navigate to the given hash location. This adds the '#' 
+    # Navigate to the given hash location. This adds the '#'
     # fragment to the start of the path
     def navigate(path)
       @location.hash = "##{path}"
@@ -54,7 +54,7 @@ module Vienna
         @named, @handler = [], handler
 
         pattern = Regexp.escape pattern
-        pattern = pattern.gsub OPTIONAL, "(?:$1)?"
+        pattern = pattern.gsub OPTIONAL, "(?:\\1)?"
 
         pattern.gsub(NAMED) { |m| @named << m[1..-1] }
         pattern.gsub(SPLAT) { |m| @named << m[2..-1] }

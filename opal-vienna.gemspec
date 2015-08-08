@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths  = ['lib']
 
   s.add_dependency 'opal', ['>= 0.5.0', '< 1.0.0']
-  s.add_dependency 'opal-jquery'
+  s.add_dependency 'opal-browser'
   s.add_dependency 'opal-activesupport'
 
   s.add_development_dependency 'opal-rspec', '>= 0.2.1'

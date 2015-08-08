@@ -34,12 +34,16 @@ module Vienna
     end
 
     def create_element
-      scope = (self.parent ? parent.element : Element)
+      scope = (self.parent ? parent.element : Browser::DOM::Element)
 
       if el = self.class.element
-        scope.find el
+        if scope.instance_of?(Browser::DOM::Element)
+          scope.at(el) || DOM {}
+        else
+          $document.at(el)
+        end
       else
-        e = scope.new tag_name
+        e = scope.create tag_name
         e.add_class class_name
       end
     end

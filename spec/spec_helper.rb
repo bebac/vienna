@@ -1,6 +1,5 @@
-require 'vendor/jquery'
 require 'opal-rspec'
-require 'opal-jquery'
+require 'opal-browser'
 require 'vienna'
 require 'vienna/template_view'
 
@@ -33,12 +32,10 @@ module ViennaSpecHelper
     html = %Q{<div id="vienna-spec-test-div">#{html_string}</div>}
 
     before do
-      @_spec_html = Element.parse(html)
-      @_spec_html.append_to_body
+      $document.body.inner_html = html
     end
 
     after do
-      @_spec_html.remove
     end
   end
 end

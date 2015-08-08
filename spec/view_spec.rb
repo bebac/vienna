@@ -28,7 +28,8 @@ describe Vienna::View do
         end
       end
 
-      klass.new.create_element.tag_name.should eq("table")
+      #klass.new.create_element.tag_name.should eq("table")
+      klass.new.create_element.name.should eq("TABLE")
     end
 
     it "creates a new element with specified tag_name with the class method when no element defined" do
@@ -36,7 +37,8 @@ describe Vienna::View do
         tag_name 'table'
       end
 
-      klass.new.create_element.tag_name.should eq("table")
+      #klass.new.create_element.tag_name.should eq("table")
+      klass.new.create_element.name.should eq("TABLE")
     end
 
     it "creates a div element with specified class_name in class when no element defined" do

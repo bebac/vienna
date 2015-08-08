@@ -1,5 +1,4 @@
 require 'opal'
-require 'opal-jquery'
 require 'opal-activesupport'
 require 'opal/vienna/version'
 

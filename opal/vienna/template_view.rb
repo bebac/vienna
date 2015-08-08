@@ -19,7 +19,8 @@ module Vienna
       before_render
 
       if template = Template[self.class.template]
-        element.html = _render_template(template)
+        #element.html = _render_template(template)
+        element.inner_html = _render_template(template)
       end
 
       after_render
