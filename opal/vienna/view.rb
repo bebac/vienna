@@ -60,7 +60,7 @@ module Vienna
     end
 
     def find(selector)
-      element.find(selector)
+      element.at(selector)
     end
 
     def setup_events
